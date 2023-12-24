@@ -3,12 +3,12 @@ import keyboard
 import os
 from PIL import Image
 from model_test import prediction
-cap = cv2.VideoCapture('rtsp://Cowwin:12345678@192.168.1.103/stream2')
+cap = cv2.VideoCapture('rtsp://Cowwin:12345678@192.168.1.100/stream2')
 
 while cap.isOpened():
     ret, frame = cap.read()
     cv2.imshow('frame', frame)
-    if keyboard.is_pressed('c'):
+    '''if keyboard.is_pressed('c'):
         print("capture")
         cv2.imwrite(os.path.join("dump/images", "feeder.jpg"), frame)
         image = Image.open('dump/images/feeder.jpg')
@@ -16,7 +16,7 @@ while cap.isOpened():
         correct_size = image.resize((224, 224))
         correct_size.save('dump/images/feeder.jpg')
 
-        print(prediction("dump"))
+        print(prediction("dump"))'''
     if cv2.waitKey(20) & 0xFF == ord('q'):
         break
 cap.release()

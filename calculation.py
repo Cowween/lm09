@@ -1,6 +1,7 @@
 import mysql.connector as sql
 import smtplib, ssl
 
+
 def calculate_mean(cursor):
     query = 'SELECT weight from birds;'
     cursor.execute(query)
@@ -27,7 +28,6 @@ def send_email(message, receiver_email):
         server.sendmail(sender_email, receiver_email, message2)
 
 
-send_email("[(28, '0007633FC2', '19 30 12', '26/10/23', 0)]", '191321y@student.hci.edu.sg')
 
 
 
